@@ -1,17 +1,26 @@
 <h1>Up Down Center</h1>
-#foreach ($player in $game.getPlayerList())
+<div class="row">
+    <div class="col-sm-9">
+      #foreach ($player in $game.getPlayerList())
 
-    <h2>Player $velocityCount current coin: $player.getCoin()
-      #if ($playerRoll)
-        #if ($previous == $velocityCount)
-          - Roll result: $playerRoll
-        #end
+          <h2>Player $velocityCount current coin: $player.getCoin()
+            #if ($playerRoll)
+              #if ($previous == $velocityCount)
+                - Roll result: $playerRoll
+              #end
+            #end
+          </h2>
       #end
-    </h2>
-#end
+    </div>
+    <div class="col-sm-3">
+      <h2>Center Pot</h2>
+      <h2>$game.getPot() coin(s)</h2>
+    </div>
+</div>
 
 #if ($win)
   <h1>Winner is player $win</h1>
+  <a href="/" class="btn btn-primary">Play Again</a>
 #else
   #set($current = $game.getCurrentPlayerIndex()+1)
   <h2>Next Player: Player $current</h2>

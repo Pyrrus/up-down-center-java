@@ -5,6 +5,7 @@ public class Game{
   private int mPlayerNum;
   private List<Player> mPlayerList= new ArrayList<Player>();
   private int mCurrentPlayer;
+  private int mPot;
 
   public Game(int playerNum){
     mPlayerNum = playerNum;
@@ -12,6 +13,7 @@ public class Game{
       mPlayerList.add(new Player());
     }
     mCurrentPlayer = 0;
+    mPot=0;
   }
 
   public int getPlayerNum(){
@@ -28,6 +30,10 @@ public class Game{
 
   public Player getCurrentPlayer(){
     return mPlayerList.get(mCurrentPlayer);
+  }
+
+  public int getPot(){
+    return mPot;
   }
 
   public void nextTurn(){
@@ -71,6 +77,7 @@ public class Game{
       }
     } else if (result == "C") {
       cPlayer.removeCoin();
+      mPot++;
     }
   }
 

@@ -23,6 +23,11 @@ public class GameTest {
     assertEquals(0, gameTest.getCurrentPlayerIndex());
   }
 
+  public void getPot_instantiatesCorrectly(){
+    Game gameTest = new Game(2);
+    assertEquals(0, gameTest.getPot());
+  }
+
   public void getCurrentPlayerIndex_incrementsAfterNextTurn(){
     Game gameTest = new Game(2);
     gameTest.nextTurn();
@@ -62,10 +67,11 @@ public class GameTest {
     assertEquals(3, gameTest.getCurrentPlayer().getCoin());
   }
 
-  public void coinAct_removesCoinOnC(){
+  public void coinAct_removesCoinOnCandAddsToPot(){
     Game gameTest = new Game(3);
     gameTest.coinAct("C");
     assertEquals(2, gameTest.getCurrentPlayer().getCoin());
+    assertEquals(1, gameTest.getPot());
   }
 
   public void coinAct_removesCoinOnR(){
