@@ -1,0 +1,17 @@
+<h1>Up Down Center</h1>
+#foreach ($player in $game.getPlayerList())
+  <h2>Player $velocityCount current coin: $player.getCoin()</h2>
+#end
+
+#if ($playerRoll)
+  <p>Roll result: $playerRoll</p>
+#end
+
+#if ($win)
+  <h1>Winner is player $win</h1>
+#else
+  #set($current = $game.getCurrentPlayerIndex()+1)
+  <h2>Next Player: Player $current</h2>
+  <p>Rolling $game.getCurrentPlayer().getRoll() dice</p>
+  <a href="/game" class="btn btn-primary">Roll Dice</a>
+#end
