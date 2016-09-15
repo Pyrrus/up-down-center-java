@@ -1,1 +1,1 @@
-web: ./build/install/udc/bin/udc
+web: ./build/install/udc-game/bin/udc-game

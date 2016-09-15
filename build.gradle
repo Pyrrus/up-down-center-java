@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "Game (up down center)" // name of the project
 version = '1.0'
-applicationName = "udc"
+applicationName = "udc-game"
 mainClassName = "App" //who have the public static void main(String[] args)
 
 repositories {
