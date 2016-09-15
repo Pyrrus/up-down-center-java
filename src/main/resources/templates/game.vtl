@@ -1,10 +1,13 @@
 <h1>Up Down Center</h1>
 #foreach ($player in $game.getPlayerList())
-  <h2>Player $velocityCount current coin: $player.getCoin()</h2>
-#end
 
-#if ($playerRoll)
-  <p>Roll result: $playerRoll</p>
+    <h2>Player $velocityCount current coin: $player.getCoin()
+      #if ($playerRoll)
+        #if ($previous == $velocityCount)
+          - Roll result: $playerRoll
+        #end
+      #end
+    </h2>
 #end
 
 #if ($win)

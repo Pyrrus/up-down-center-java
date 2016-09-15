@@ -31,6 +31,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Game game = request.session().attribute("game");
       String playerRoll = "";
+      int previous = game.getCurrentPlayerIndex()+1;
       int numRolls = game.getCurrentPlayer().getRoll();
       for(int i = 0; i < numRolls; i++){
         playerRoll += game.diceRoll() + " ";
@@ -42,6 +43,7 @@ public class App {
       } else {
         model.put("win", game.winner() + 1);
       }
+      model.put("previous", previous);
       model.put("game", game);
       model.put("playerRoll", playerRoll);
       model.put("template", "templates/game.vtl");
