@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "Game (up down center)" // name of the project
+archivesBaseName = "udc-game" // name of the project
 version = '1.0'
 applicationName = "udc-game"
 mainClassName = "App" //who have the public static void main(String[] args)
